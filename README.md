@@ -19,7 +19,7 @@ It runs on iPhone, Android, Windows, Mac, and Linux, works fully offline, and in
 - Select several entries to move, tag, or delete them in bulk
 - Delete an entry, or change its date
 - Color themes (Vanilla Cream, Blush Petal, Rosewood, Sage Leaf, Misty Sky, Midnight Lagoon), each with a light and a dark version
-- Font choice in Settings (Print Clearly, or the classic Lora serif); the fonts are built into the app
+- Font choice in Settings (Aliquam, Print Clearly, or the classic Lora serif); the fonts are built into the app
 - Folders and tags, with a multi-select mode to add many entries to a folder at once
 - Your folder or tag filter is remembered when you come back to the app
 - Search across the full text of every entry
@@ -142,7 +142,7 @@ desktop/                Electron wrapper for the Windows app
 .github/workflows/      GitHub Action that builds the .exe
 ```
 
-**Fonts:** Print Clearly and Print Bold by [Blue Vinyl Fonts](http://www.bvfonts.com) are freeware, free for private use. Their license asks you to contact bvfonts@bvfonts.com before commercial use or redistribution on CDs. Lora is under the SIL Open Font License. To add another font, embed it with an `@font-face` in `index.html`, add a `[data-font="id"]` block next to the existing one, and add one line to the `FONTS` list in the script.
+**Fonts:** Aliquam by Alvaro Thomaz is freeware (the default; it has no bold, so bold text is browser-simulated). Print Clearly and Print Bold by [Blue Vinyl Fonts](http://www.bvfonts.com) are freeware, free for private use. Their license asks you to contact bvfonts@bvfonts.com before commercial use or redistribution on CDs. Lora is under the SIL Open Font License. To add another font, embed it with an `@font-face` in `index.html`, add a `[data-font="id"]` block next to the existing one, and add one line to the `FONTS` list in the script.
 
 **Built with:** vanilla JavaScript, IndexedDB, a service worker, and the Web Crypto API. No frameworks, no dependencies, no network requests at runtime.
 
