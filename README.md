@@ -19,7 +19,7 @@ It runs on iPhone, Android, Windows, Mac, and Linux, works fully offline, and in
 - Select several entries to move, tag, or delete them in bulk
 - Delete an entry, or change its date
 - Color themes (Vanilla Cream, Blush Petal, Rosewood, Sage Leaf, Misty Sky, Midnight Lagoon), each with a light and a dark version
-- Font choice in Settings (Aliquam, Print Clearly, or the classic Lora serif); the fonts are built into the app
+- Font choice in Settings: Aliquam, Print Clearly and Lora (built into the app), plus Arial, Verdana, Trebuchet MS, Georgia, Times New Roman, Palatino and Courier New (these use the copy already on the device, so they may look slightly different from one device to another)
 - Folders and tags, with a multi-select mode to add many entries to a folder at once
 - Your folder or tag filter is remembered when you come back to the app
 - Search across the full text of every entry

@@ -1168,6 +1168,15 @@
   #selBar .sel-actions button{ flex:1; padding:8px 6px; }
   #selBar button.danger{ color:#B5645F; border-color:#B5645F; }
   #selBar button.danger:disabled{ color:var(--gray); border-color:var(--line); }
+
+  /* ===== Built-in system fonts: no files, they use the font already on the device ===== */
+  [data-font="arial"]{ --font-body:Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif; --font-display:Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="verdana"]{ --font-body:Verdana, Geneva, 'DejaVu Sans', sans-serif; --font-display:Verdana, Geneva, 'DejaVu Sans', sans-serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="trebuchet"]{ --font-body:'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; --font-display:'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="georgia"]{ --font-body:Georgia, 'Times New Roman', serif; --font-display:Georgia, 'Times New Roman', serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="times"]{ --font-body:'Times New Roman', Times, 'Liberation Serif', serif; --font-display:'Times New Roman', Times, 'Liberation Serif', serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="palatino"]{ --font-body:'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif; --font-display:'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+  [data-font="courier"]{ --font-body:'Courier New', Courier, 'Liberation Mono', monospace; --font-display:'Courier New', Courier, 'Liberation Mono', monospace; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
 </style>
 </head>
 <body>
@@ -2341,11 +2350,18 @@ const PALETTES = [
   { id:'misty',    name:'Misty Sky',       sw:['#A9B7C6','#4B6785'] },
   { id:'lagoon',   name:'Midnight Lagoon', sw:['#2D3A47','#A9B7C6'] }
 ];
-/* To add a font later: add an @font-face (embedded), a [data-font="id"] block in the CSS, and one line here. */
+/* To add a font later: (embedded fonts) add an @font-face; then add a [data-font="id"] block in the CSS and one line here. Fonts already on every device (Arial etc.) need no file. */
 const FONTS = [
   { id:'aliquam', name:'Aliquam', css:"'Aliquam', sans-serif" },
   { id:'print', name:'Print Clearly', css:"'Print Clearly', sans-serif" },
-  { id:'lora',  name:'Lora (serif)',  css:"'Lora', serif" }
+  { id:'lora',  name:'Lora (serif)',  css:"'Lora', serif" },
+  { id:'arial', name:'Arial', css:"Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif" },
+  { id:'verdana', name:'Verdana', css:"Verdana, Geneva, 'DejaVu Sans', sans-serif" },
+  { id:'trebuchet', name:'Trebuchet MS', css:"'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif" },
+  { id:'georgia', name:'Georgia', css:"Georgia, 'Times New Roman', serif" },
+  { id:'times', name:'Times New Roman', css:"'Times New Roman', Times, 'Liberation Serif', serif" },
+  { id:'palatino', name:'Palatino', css:"'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif" },
+  { id:'courier', name:'Courier New', css:"'Courier New', Courier, 'Liberation Mono', monospace" }
 ];
 let paletteId = 'classic', fontId = 'aliquam';
 function applyPalette(id){
