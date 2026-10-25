@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>my saga.</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
 <meta name="theme-color" content="#F3EFE7">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="my saga.">
 <style>
   @font-face{
@@ -46,8 +46,8 @@
     --blush:#E3AFB3;
     --blush-soft:#FBEEEE;
 
-    --font-display:'Aliquam','Helvetica Neue',Arial,sans-serif;
-    --font-body:'Aliquam','Helvetica Neue',Arial,sans-serif;
+    --font-display:Arial,'Helvetica Neue',Helvetica,'Liberation Sans',sans-serif;
+    --font-body:Arial,'Helvetica Neue',Helvetica,'Liberation Sans',sans-serif;
     --font-wordmark:'Micavalo','Georgia',serif;
   }
 
@@ -1140,11 +1140,12 @@
   [data-palette="lagoon"][data-theme="dark"]{ --ivory:#232D37; --cream:#2D3A47; --cream-deep:#364555; --line:#46576A; --line-soft:#3C4B5C; --hairline:#46576A; --charcoal:#EEF2F6; --gray:#B3C0CE; --sage:#A9B7C6; --sage-soft:#3A4A5B; --blush:#BCC7D2; --blush-soft:#2D3843; }
 
   /* ===== Update 3: fonts, press-hold menu, bulk actions ===== */
-  :root{ --display-style:normal; --fw-text:400; --ls:.03em; --ws:.12em; }
+  :root{ --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; }
   body{ letter-spacing:var(--ls); word-spacing:var(--ws); }
   input,select,textarea,button{ letter-spacing:inherit; word-spacing:inherit; }
   .wordmark,.lock-header h1{ letter-spacing:normal; word-spacing:normal; }
   .landing-wordmark{ word-spacing:normal; }
+  [data-font="aliquam"]{ --font-body:'Aliquam','Helvetica Neue',Arial,sans-serif; --font-display:'Aliquam','Helvetica Neue',Arial,sans-serif; --ls:.03em; --ws:.12em; }
   [data-font="print"]{ --font-body:'Print Clearly','Helvetica Neue',Arial,sans-serif; --font-display:'Print Clearly','Helvetica Neue',Arial,sans-serif; --ls:normal; --ws:normal; font-size-adjust:0.40; }
   [data-font="lora"]{ --font-body:'Lora',Georgia,serif; --font-display:Georgia,'Times New Roman',serif; --display-style:italic; --fw-text:450; --ls:normal; --ws:normal; font-size-adjust:none; }
   input,select,textarea,button{ font-size-adjust:inherit; }
@@ -1177,6 +1178,97 @@
   [data-font="times"]{ --font-body:'Times New Roman', Times, 'Liberation Serif', serif; --font-display:'Times New Roman', Times, 'Liberation Serif', serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
   [data-font="palatino"]{ --font-body:'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif; --font-display:'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
   [data-font="courier"]{ --font-body:'Courier New', Courier, 'Liberation Mono', monospace; --font-display:'Courier New', Courier, 'Liberation Mono', monospace; --display-style:normal; --fw-text:400; --ls:normal; --ws:normal; font-size-adjust:none; }
+
+  /* ===== App bar / accent ink per theme ===== */
+  :root{ --appbar:#5B7155; --appbar-text:#FFFFFF; --accent-ink:#5B7155; }
+  [data-theme="dark"]{ --appbar:#3A362F; --appbar-text:#F1ECE2; --accent-ink:#9BB494; }
+  [data-palette="vanilla"]{ --appbar:#8A4650; --accent-ink:#8A4650; }
+  [data-palette="vanilla"][data-theme="dark"]{ --appbar:#403829; --accent-ink:#CB9AA0; }
+  [data-palette="blush"]{ --appbar:#9A4A62; --accent-ink:#9A4A62; }
+  [data-palette="blush"][data-theme="dark"]{ --appbar:#40292E; --accent-ink:#CD98A8; }
+  [data-palette="rosewood"]{ --appbar:#8F4852; --accent-ink:#8F4852; }
+  [data-palette="rosewood"][data-theme="dark"]{ --appbar:#40292B; --accent-ink:#CD989F; }
+  [data-palette="sage"]{ --appbar:#52653C; --accent-ink:#52653C; }
+  [data-palette="sage"][data-theme="dark"]{ --appbar:#394029; --accent-ink:#B5C5A0; }
+  [data-palette="misty"]{ --appbar:#46607C; --accent-ink:#46607C; }
+  [data-palette="misty"][data-theme="dark"]{ --appbar:#293440; --accent-ink:#9DB2C8; }
+  [data-palette="lagoon"]{ --appbar:#2D3A47; --accent-ink:#2D3A47; }
+  [data-palette="lagoon"][data-theme="dark"]{ --appbar:#364555; --accent-ink:#A9B7C6; }
+
+  /* ===== Update 4: finished list, app bar, tab bar ===== */
+  .mob-only,.search-cancel,.tabbar{ display:none; }
+  .lib-strip{ display:flex; align-items:center; }
+  .lib-strip .lib-tools{ flex:1; position:static; padding:0 24px 10px; background:transparent; min-height:0; }
+
+  .section-label{ position:sticky; top:0; z-index:3; margin:0; padding:7px 16px; background:var(--cream-deep); color:var(--charcoal); font-size:12px; font-weight:700; letter-spacing:.07em; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .section-label.month{ margin-top:0; }
+  .pinned-block{ margin-bottom:0; }
+  .lib-scroll{ padding-bottom:0; }
+  .library .date-chip{ margin:10px 16px; }
+
+  .entry-row{ margin:0; border-radius:0; padding:12px 16px; gap:12px; align-items:flex-start; background:var(--ivory); border-bottom:1px solid var(--line); }
+  .entry-row:hover{ background:var(--cream); }
+  .entry-row.active{ background:var(--blush-soft); box-shadow:inset 3px 0 0 var(--sage); }
+  .entry-row .date-col{ flex:0 0 44px; width:44px; display:flex; flex-direction:column; align-items:center; line-height:1.1; padding-top:1px; }
+  .entry-row .dow{ font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gray); }
+  .entry-row .dnum{ font-size:27px; font-weight:400; color:var(--charcoal); margin-top:3px; }
+  .entry-row .title-row{ display:flex; align-items:center; gap:6px; }
+  .entry-row .pin-mark{ opacity:1; margin:0; color:var(--accent-ink); flex-shrink:0; }
+  body.selecting .entry-row .pin-mark{ display:inline-block; }
+  .entry-row .snippet{ margin:0; }
+  .entry-row .snippet.title-line{ flex:1; min-width:0; font-size:16px; font-weight:700; color:var(--charcoal); }
+  .entry-row .snippet.body-line, .entry-row .snippet.body-only{ white-space:normal; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2; overflow:hidden; font-size:14px; line-height:1.4; color:var(--gray); margin-top:3px; }
+  .entry-row .snippet.body-only{ -webkit-line-clamp:3; line-clamp:3; font-size:15px; color:var(--charcoal); margin-top:0; }
+  .entry-row .sel-box{ align-self:center; width:22px; height:22px; }
+  .row-thumb{ width:56px; height:56px; border-radius:6px; align-self:center; }
+
+  .tab{ flex:1; background:none; border:none; color:var(--gray); display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 0 7px; font-size:11px; font-weight:700; cursor:pointer; }
+  .tab svg{ width:24px; height:24px; }
+  .tab.on{ color:var(--accent-ink); }
+
+  @media (max-width:780px){
+    /* app bar: one solid colour band, white icons */
+    .topbar{ background:var(--appbar); color:var(--appbar-text); border-bottom:none; height:calc(56px + env(safe-area-inset-top, 0px)); padding:env(safe-area-inset-top, 0px) 6px 0 16px; }
+    .wordmark-lockup{ gap:8px; }
+    .wordmark-lockup svg{ color:var(--appbar-text); opacity:.9; }
+    .wordmark{ color:var(--appbar-text); font-size:25px; white-space:nowrap; }
+    .topbar-right{ gap:0; }
+    #calBtn,#statsBtn,#settingsBtn{ display:none; }
+    .mob-only{ display:flex; }
+    .icon-btn{ color:var(--appbar-text); width:44px; height:44px; border-radius:50%; }
+    .icon-btn:hover{ color:var(--appbar-text); background:rgba(255,255,255,.14); }
+    .search-box,.search-box:focus-within{ width:44px; height:44px; padding:0; justify-content:center; background:transparent; border:none; border-radius:50%; color:var(--appbar-text); cursor:pointer; }
+    .search-box svg{ width:21px; height:21px; }
+    .search-box input{ display:none; }
+    .topbar.searching .wordmark-lockup, .topbar.searching #plusBtn{ display:none; }
+    .topbar.searching .topbar-right{ flex:1; gap:6px; }
+    .topbar.searching .search-box, .topbar.searching .search-box:focus-within{ flex:1; width:auto; height:40px; padding:0 14px; justify-content:flex-start; gap:8px; background:rgba(255,255,255,.2); border-radius:20px; cursor:text; }
+    .topbar.searching .search-box input{ display:block; color:var(--appbar-text); }
+    .topbar.searching .search-box input::placeholder{ color:var(--appbar-text); opacity:.75; }
+    .topbar.searching .search-cancel{ display:block; background:none; border:none; color:var(--appbar-text); font:inherit; font-size:15px; font-weight:700; padding:10px 8px; }
+
+    /* list screen */
+    .library{ padding:0; background:var(--ivory); }
+    .new-entry-btn{ display:none; }
+    .lib-strip{ background:var(--ivory); border-bottom:1px solid var(--line); min-height:50px; }
+    .folder-picker{ flex:1; width:auto; justify-content:flex-start; gap:8px; margin:0; border:none; border-radius:0; background:transparent; padding:0 16px; height:50px; font-size:16px; font-weight:700; color:var(--charcoal); }
+    .lib-strip .lib-tools{ flex:0 0 auto; padding:0 6px 0 0; }
+    #selectBtn{ border:none; background:none; color:var(--accent-ink); font-size:16px; font-weight:700; padding:12px 12px; }
+    body.selecting .folder-picker{ display:none; }
+    body.selecting .lib-strip .lib-tools{ flex:1; padding:8px 12px; }
+    .entry-row{ padding:13px 16px; }
+    .entry-row.active{ background:var(--ivory); box-shadow:none; }
+    .entry-row.picked{ background:var(--sage-soft); }
+
+    /* bottom tab bar */
+    .tabbar{ display:flex; flex-shrink:0; background:var(--ivory); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom, 0px); }
+    .body-split.showing-editor + .tabbar{ display:none; }
+    #toast{ bottom:calc(84px + env(safe-area-inset-bottom, 0px)); }
+
+    /* editor screen: back strip */
+    .editor-inner{ padding-top:0; }
+    .back-btn{ width:calc(100% + 32px); margin:0 -16px 16px; padding:0 16px; height:50px; background:var(--cream); border-bottom:1px solid var(--line); color:var(--accent-ink); font-size:16px; font-weight:700; }
+  }
 </style>
 </head>
 <body>
@@ -1263,7 +1355,7 @@
   </div>
 </div>
 <script>
-try { var _p = localStorage.getItem('mysaga_palette'), _f = localStorage.getItem('mysaga_font'); if (_p && _p !== 'classic') document.documentElement.setAttribute('data-palette', _p); if (_f && _f !== 'aliquam') document.documentElement.setAttribute('data-font', _f); } catch (e) {}
+try { var _p = localStorage.getItem('mysaga_palette'), _f = localStorage.getItem('mysaga_font'); if (_p && _p !== 'classic') document.documentElement.setAttribute('data-palette', _p); if (_f && _f !== 'arial') document.documentElement.setAttribute('data-font', _f); } catch (e) {}
 try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('landing-screen').classList.add('hidden'); } catch (e) {}
 </script>
 <div id="lock-screen">
@@ -1325,10 +1417,14 @@ try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('la
       <div class="wordmark">my saga.</div>
     </div>
     <div class="topbar-right">
-      <div class="search-box">
+      <div class="search-box" id="searchBox">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input id="searchInput" type="text" placeholder="Search your diary">
       </div>
+      <button type="button" class="search-cancel" id="searchCancel">Cancel</button>
+      <button type="button" class="icon-btn mob-only" id="plusBtn" aria-label="New entry" title="New entry">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
       <button class="icon-btn" id="calBtn" title="Calendar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       </button>
@@ -1410,8 +1506,8 @@ try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('la
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         New Entry
       </button>
+      <div class="lib-strip">
       <button type="button" class="folder-picker" id="folderPicker"><span id="fpLabel">All entries</span><span>&#9662;</span></button>
-      <div class="lib-scroll">
       <div class="lib-tools" id="libTools">
         <button type="button" id="selectBtn">Select</button>
         <div id="selBar">
@@ -1427,6 +1523,8 @@ try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('la
           </div>
         </div>
       </div>
+      </div>
+      <div class="lib-scroll">
       <div class="date-chip" id="dateChip" style="display:none"></div>
       <div id="libraryList"></div>
       <div id="empty-library" class="empty-state hidden">
@@ -1542,6 +1640,12 @@ try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('la
     </div>
 
   </div>
+  <nav class="tabbar" id="tabbar" aria-label="Main">
+    <button type="button" class="tab on" id="tabEntries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Entries</span></button>
+    <button type="button" class="tab" id="tabCal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Calendar</span></button>
+    <button type="button" class="tab" id="tabStats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg><span>Stats</span></button>
+    <button type="button" class="tab" id="tabSettings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2.2" fill="var(--ivory)"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="15" cy="17" r="2.2" fill="var(--ivory)"/></svg><span>Settings</span></button>
+  </nav>
 </div>
 
 <script>
@@ -1668,7 +1772,7 @@ function fmtCreatedStamp(iso){
   return `Created ${monthNames[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} at ${h}:${mm} ${ampm}`;
 }
 function plainSnippet(html){
-  return (new DOMParser().parseFromString(html || '', 'text/html').body.textContent || '').trim().slice(0,90);
+  return (new DOMParser().parseFromString(html || '', 'text/html').body.textContent || '').trim().slice(0,200);
 }
 function esc(t){
   return String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -1716,7 +1820,8 @@ function renderLibrary(){
   }
 
   const sorted = [...filtered].sort(byDateDesc);
-  visibleIds = sorted.map(e => e.id); updateNavBtns();
+  const pinned = sorted.filter(e=>e.pinned), rest = sorted.filter(e=>!e.pinned);
+  visibleIds = [...pinned, ...rest].map(e => e.id); updateNavBtns();
 
   if(entries.length === 0){
     emptyLibEl.classList.remove('hidden');
@@ -1728,7 +1833,6 @@ function renderLibrary(){
     return;
   }
 
-  const pinned = sorted.filter(e=>e.pinned);
   if(pinned.length){
     const block = document.createElement('div');
     block.className = 'pinned-block';
@@ -1737,7 +1841,7 @@ function renderLibrary(){
     listEl.appendChild(block);
   }
 
-  const groups = groupByMonth(sorted);
+  const groups = groupByMonth(rest);
   groups.forEach(g=>{
     const label = document.createElement('div');
     label.className = 'section-label month';
@@ -1755,19 +1859,15 @@ function renderRow(e){
   row.className = 'entry-row' + (e.id===activeId ? ' active' : '') + (e.pinned ? ' is-pinned' : '') + (pic ? ' has-thumb' : '') + (selMode && selected.has(e.id) ? ' picked' : '');
   row.dataset.id = e.id;
   const bodyText = plainSnippet(e.html);
+  const dt = new Date(e.journalDate + 'T00:00:00');
+  const pin = e.pinned ? '<svg class="pin-mark" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L12 10 M8 10 L16 10 L18 21 L6 21 Z" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>' : '';
   const lines = e.title
-    ? `<div class="snippet title-line">${esc(e.title)}</div>` + (bodyText ? `<div class="snippet body-line">${esc(bodyText)}</div>` : '')
-    : `<div class="snippet">${esc(bodyText || 'Empty entry')}</div>`;
+    ? `<div class="title-row"><div class="snippet title-line">${esc(e.title)}</div>${pin}</div>` + (bodyText ? `<div class="snippet body-line">${esc(bodyText)}</div>` : '')
+    : `<div class="title-row"><div class="snippet body-only">${esc(bodyText || 'Empty entry')}</div>${pin}</div>`;
   row.innerHTML = `
     <span class="sel-box"></span>
-    <svg class="pin-mark" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 L12 10 M8 10 L16 10 L18 21 L6 21 Z" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
-    <div class="meta">
-      <div class="row-top">
-        <span class="date-label">${fmtShortDate(e.journalDate)}</span>
-        ${e.photos && e.photos.length ? `<svg class="camera" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>` : ''}
-      </div>
-      ${lines}
-    </div>
+    <div class="date-col"><span class="dow">${dayNames[dt.getDay()]}</span><span class="dnum">${dt.getDate()}</span></div>
+    <div class="meta">${lines}</div>
   `;
   if(pic) row.appendChild(makeThumbEl(e, pic));
   attachLongPress(row, e.id);
@@ -2318,7 +2418,7 @@ function isNight(){
   return st > en ? (m >= st || m < en) : (m >= st && m < en);
 }
 function updateMetaTheme(){
-  const c = getComputedStyle(document.documentElement).getPropertyValue('--cream-deep').trim();
+  const c = getComputedStyle(document.documentElement).getPropertyValue('--appbar').trim();
   document.querySelector('meta[name="theme-color"]').setAttribute('content', c || '#F3EFE7');
 }
 function applyTheme(mode){
@@ -2352,10 +2452,10 @@ const PALETTES = [
 ];
 /* To add a font later: (embedded fonts) add an @font-face; then add a [data-font="id"] block in the CSS and one line here. Fonts already on every device (Arial etc.) need no file. */
 const FONTS = [
+  { id:'arial', name:'Arial', css:"Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif" },
   { id:'aliquam', name:'Aliquam', css:"'Aliquam', sans-serif" },
   { id:'print', name:'Print Clearly', css:"'Print Clearly', sans-serif" },
   { id:'lora',  name:'Lora (serif)',  css:"'Lora', serif" },
-  { id:'arial', name:'Arial', css:"Arial, 'Helvetica Neue', Helvetica, 'Liberation Sans', sans-serif" },
   { id:'verdana', name:'Verdana', css:"Verdana, Geneva, 'DejaVu Sans', sans-serif" },
   { id:'trebuchet', name:'Trebuchet MS', css:"'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif" },
   { id:'georgia', name:'Georgia', css:"Georgia, 'Times New Roman', serif" },
@@ -2363,7 +2463,7 @@ const FONTS = [
   { id:'palatino', name:'Palatino', css:"'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif" },
   { id:'courier', name:'Courier New', css:"'Courier New', Courier, 'Liberation Mono', monospace" }
 ];
-let paletteId = 'classic', fontId = 'aliquam';
+let paletteId = 'classic', fontId = 'arial';
 function applyPalette(id){
   paletteId = PALETTES.some(p => p.id === id) ? id : 'classic';
   if (paletteId === 'classic') document.documentElement.removeAttribute('data-palette'); else document.documentElement.setAttribute('data-palette', paletteId);
@@ -2372,8 +2472,8 @@ function applyPalette(id){
   updateMetaTheme();
 }
 function applyFont(id){
-  fontId = FONTS.some(f => f.id === id) ? id : 'aliquam';
-  if (fontId === 'aliquam') document.documentElement.removeAttribute('data-font'); else document.documentElement.setAttribute('data-font', fontId);
+  fontId = FONTS.some(f => f.id === id) ? id : 'arial';
+  if (fontId === 'arial') document.documentElement.removeAttribute('data-font'); else document.documentElement.setAttribute('data-font', fontId);
   try { localStorage.setItem('mysaga_font', fontId); } catch (e) {}
   document.querySelectorAll('#fontList button').forEach(b => b.classList.toggle('active', b.dataset.id === fontId));
 }
@@ -2388,6 +2488,25 @@ FONTS.forEach(f => {
   b.onclick = async () => { applyFont(f.id); await dbSetSetting('font', f.id); };
   document.getElementById('fontList').appendChild(b);
 });
+
+/* ---------------- Mobile app bar + tab bar ---------------- */
+const isMobile = () => matchMedia('(max-width:780px)').matches;
+const topbarEl = document.querySelector('.topbar'), searchBoxEl = document.getElementById('searchBox'), searchInputEl = document.getElementById('searchInput');
+searchBoxEl.addEventListener('click', () => {
+  if (!isMobile()) return;
+  document.getElementById('bodySplit').classList.remove('showing-editor');   // search lives on the list screen
+  if (!topbarEl.classList.contains('searching')){ topbarEl.classList.add('searching'); }
+  searchInputEl.focus();
+});
+searchInputEl.addEventListener('blur', () => { if (isMobile() && !searchInputEl.value.trim()) topbarEl.classList.remove('searching'); });
+document.getElementById('searchCancel').addEventListener('click', ev => {
+  ev.stopPropagation(); searchInputEl.value = ''; searchInputEl.dispatchEvent(new Event('input')); topbarEl.classList.remove('searching');
+});
+document.getElementById('plusBtn').addEventListener('click', () => document.getElementById('newEntryBtn').click());
+document.getElementById('tabCal').addEventListener('click', () => document.getElementById('calBtn').click());
+document.getElementById('tabStats').addEventListener('click', () => document.getElementById('statsBtn').click());
+document.getElementById('tabSettings').addEventListener('click', () => document.getElementById('settingsBtn').click());
+document.getElementById('tabEntries').addEventListener('click', () => { const sc = document.querySelector('.lib-scroll'); if (sc) sc.scrollTo({ top: 0, behavior: 'smooth' }); });
 
 /* ---------------- Floating toolbar, Done button, mobile keyboard ---------------- */
 document.getElementById('toolbar').addEventListener('mousedown', ev => ev.preventDefault()); // keep selection
@@ -2999,7 +3118,7 @@ async function initApp(){
   document.getElementById('autoStart').value = autoStart;
   document.getElementById('autoEnd').value = autoEnd;
   applyPalette((await dbGetSetting('palette')) || 'classic');
-  applyFont((await dbGetSetting('font')) || 'aliquam');
+  applyFont((await dbGetSetting('font')) || 'arial');
   applyTheme(storedTheme || 'light');
 
   const stored = await dbGetAllEntries();

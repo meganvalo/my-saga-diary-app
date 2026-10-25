@@ -13,13 +13,14 @@ It runs on iPhone, Android, Windows, Mac, and Linux, works fully offline, and in
 ## Features
 
 - Rich-text writing: bold, italic, underline, strikethrough, headings, quotes, lists, links, and dividers
+- A finished phone layout: solid colored app bar, tap-to-search, bordered entry rows with a date column, month headers, and a bottom tab bar (Entries, Calendar, Stats, Settings)
 - Photo preview next to each entry in the list (the first picture)
 - Pin favorite entries to the top
 - Press and hold (or right-click) an entry to edit it, move it to a folder, change its date, pin it, or delete it
 - Select several entries to move, tag, or delete them in bulk
 - Delete an entry, or change its date
 - Color themes (Vanilla Cream, Blush Petal, Rosewood, Sage Leaf, Misty Sky, Midnight Lagoon), each with a light and a dark version
-- Font choice in Settings: Aliquam, Print Clearly and Lora (built into the app), plus Arial, Verdana, Trebuchet MS, Georgia, Times New Roman, Palatino and Courier New (these use the copy already on the device, so they may look slightly different from one device to another)
+- Font choice in Settings. Arial is the default; Aliquam, Print Clearly and Lora are built into the app, plus Verdana, Trebuchet MS, Georgia, Times New Roman, Palatino and Courier New (these use the copy already on the device, so they may look slightly different from one device to another)
 - Folders and tags, with a multi-select mode to add many entries to a folder at once
 - Your folder or tag filter is remembered when you come back to the app
 - Search across the full text of every entry
