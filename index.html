@@ -730,7 +730,7 @@
   }
   .cal-date.selected {
     background: var(--sage);
-    color: white;
+    color: var(--ivory);
   }
   .cal-date.empty {
     cursor: default;
@@ -767,7 +767,7 @@
     margin-top: 20px;
     padding: 8px 16px;
     background: var(--sage);
-    color: white;
+    color: var(--ivory);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -1286,20 +1286,23 @@
   [data-palette="ocean"]{ --ivory:#FAFCFC; --cream:#F1F6F6; --cream-deep:#E3F0F0; --line:#D0E1E1; --line-soft:#E8F0F0; --hairline:#D0E1E1; --charcoal:#192E2E; --gray:#506D6D; --sage:#2F6F72; --sage-soft:#E5F0F1; --blush:#E8DCB0; --blush-soft:#F8F4E7; --appbar:#235A5E; --accent-ink:#235A5E; }
   [data-palette="ocean"][data-theme="dark"]{ --ivory:#1A2828; --cream:#213333; --cream-deep:#294040; --line:#3B5959; --line-soft:#324B4B; --hairline:#3B5959; --charcoal:#E8F3F3; --gray:#AFC0C0; --sage:#7FC4C4; --sage-soft:#2A4646; --blush:#DDD3B0; --blush-soft:#46402A; --appbar:#294040; --accent-ink:#7FC4C4; }
 
-  /* ===== Richer light themes: coloured surfaces + clear borders (replaces the washed-out tints) ===== */
-  [data-palette="vanilla"]{ --ivory:#FDF9EF; --cream:#F7EED4; --cream-deep:#F3DFA5; --line:#D7C284; --line-soft:#E4D5AA; --hairline:#DAC68B; --charcoal:#262112; --gray:#5C543D; --sage:#9C505A; --sage-soft:#E5CCD0; --blush:#E8889E; --blush-soft:#F7CAD4; }
-  [data-palette="blush"]{ --ivory:#FCF0F3; --cream:#F5D6DD; --cream-deep:#EEAABA; --line:#D2899A; --line-soft:#E0AEBA; --hairline:#D590A0; --charcoal:#261217; --gray:#5C3D44; --sage:#A8506A; --sage-soft:#E6CBD3; --blush:#F8D277; --blush-soft:#F9EAC8; }
-  [data-palette="rosewood"]{ --ivory:#FAF2F3; --cream:#F0DBDD; --cream-deep:#E3B5BA; --line:#C6959A; --line-soft:#D8B6BA; --hairline:#C99CA0; --charcoal:#261214; --gray:#5C3D40; --sage:#9C4A55; --sage-soft:#E6CBCF; --blush:#E28E9C; --blush-soft:#F4CCD3; }
-  [data-palette="sage"]{ --ivory:#F8FAF2; --cream:#EAF0DB; --cream-deep:#D5E3B5; --line:#B7C695; --line-soft:#CED8B6; --hairline:#BCC99C; --charcoal:#202612; --gray:#535C3D; --sage:#5E7045; --sage-soft:#DAE2D0; --blush:#D798A2; --blush-soft:#EFD1D6; }
-  [data-palette="misty"]{ --ivory:#F2F6FA; --cream:#DBE5F0; --cream-deep:#B5CBE3; --line:#95ADC6; --line-soft:#B6C6D8; --hairline:#9CB2C9; --charcoal:#121C26; --gray:#3D4C5C; --sage:#4B6785; --sage-soft:#CED8E3; --blush:#E78898; --blush-soft:#F7CAD1; }
-  [data-palette="lagoon"]{ --ivory:#F2F6FA; --cream:#DBE6F0; --cream-deep:#B5CDE3; --line:#95AEC6; --line-soft:#B6C7D8; --hairline:#9CB3C9; --charcoal:#121C26; --gray:#3D4D5C; --sage:#2D3A47; --sage-soft:#D0D9E1; --blush:#A2B9CD; --blush-soft:#D6E1EB; }
-  [data-palette="persimmon"]{ --ivory:#FDF2EF; --cream:#F7DCD4; --cream-deep:#F3B7A5; --line:#D79784; --line-soft:#E4B8AA; --hairline:#DA9E8B; --charcoal:#261712; --gray:#5C443D; --sage:#C23A14; --sage-soft:#F5C9BC; --blush:#F8D277; --blush-soft:#F9EAC8; }
-  [data-palette="mulberry"]{ --ivory:#FAF2F6; --cream:#F0DBE5; --cream-deep:#E3B5CB; --line:#C695AD; --line-soft:#D8B6C7; --hairline:#C99CB2; --charcoal:#26121C; --gray:#5C3D4C; --sage:#6B2F4A; --sage-soft:#E8CAD7; --blush:#E28D93; --blush-soft:#F5CCCF; }
-  [data-palette="chartreuse"]{ --ivory:#FAFCF0; --cream:#F1F4D7; --cream-deep:#E5ECAC; --line:#C8CF8B; --line-soft:#D9DEB0; --hairline:#CCD293; --charcoal:#242612; --gray:#595C3D; --sage:#5F6B0B; --sage-soft:#EEF5BC; --blush:#E68A8C; --blush-soft:#F6CBCC; }
-  [data-palette="dustyrose"]{ --ivory:#FBF2F2; --cream:#F1DADB; --cream-deep:#E6B2B5; --line:#C99294; --line-soft:#DAB4B6; --hairline:#CC999B; --charcoal:#261213; --gray:#5C3D3F; --sage:#A8434D; --sage-soft:#E9C8CC; --blush:#EDD282; --blush-soft:#F9ECC8; }
-  [data-palette="honey"]{ --ivory:#FCF9F1; --cream:#F3EDD8; --cream-deep:#EBDEAD; --line:#CFC08C; --line-soft:#DED4B0; --hairline:#D2C493; --charcoal:#262212; --gray:#5C553D; --sage:#8A6A12; --sage-soft:#F5E6BC; --blush:#E28D8D; --blush-soft:#F4CCCC; }
-  [data-palette="lavender"]{ --ivory:#F5F2FA; --cream:#E2DBF0; --cream-deep:#C5B4E4; --line:#A594C7; --line-soft:#C1B5D8; --hairline:#AB9BCA; --charcoal:#191226; --gray:#483D5C; --sage:#5B4A8F; --sage-soft:#D3CDE5; --blush:#E888A6; --blush-soft:#F7CAD8; }
-  [data-palette="ocean"]{ --ivory:#F2FAFA; --cream:#DBEFF0; --cream-deep:#B5E2E3; --line:#95C5C6; --line-soft:#B6D7D8; --hairline:#9CC9C9; --charcoal:#122626; --gray:#3D5B5C; --sage:#2F6F72; --sage-soft:#C9E7E9; --blush:#ECD683; --blush-soft:#F9EFC8; }
+
+  /* ===== Themes only colour the bars, borders and accents; entries and pages stay white ===== */
+  [data-palette="vanilla"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#DCBCC0; --line-soft:#EAD7D9; --hairline:#DCBCC0; --charcoal:#232321; --gray:#66635C; --sage:#9C505A; --sage-soft:#F3E7E9; --blush:#D4ABB0; --blush-soft:#F6EEEF; }
+  [data-palette="blush"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#DEBAC5; --line-soft:#EBD6DC; --hairline:#DEBAC5; --charcoal:#232321; --gray:#66635C; --sage:#A8506A; --sage-soft:#F3E7EB; --blush:#D6A9B6; --blush-soft:#F7EEF0; }
+  [data-palette="rosewood"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#DEBABF; --line-soft:#EBD5D8; --hairline:#DEBABF; --charcoal:#232321; --gray:#66635C; --sage:#9C4A55; --sage-soft:#F4E7E8; --blush:#D6A9AF; --blush-soft:#F7EEEF; }
+  [data-palette="sage"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#CED8C0; --line-soft:#E2E8D9; --hairline:#CED8C0; --charcoal:#232321; --gray:#66635C; --sage:#5E7045; --sage-soft:#EEF1E9; --blush:#C2CEB0; --blush-soft:#F3F5EF; }
+  [data-palette="misty"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#BECCDA; --line-soft:#D8E0E9; --hairline:#BECCDA; --charcoal:#232321; --gray:#66635C; --sage:#4B6785; --sage-soft:#E8EDF2; --blush:#ADBFD1; --blush-soft:#EFF2F6; }
+  [data-palette="lagoon"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#C1CCD7; --line-soft:#DAE0E7; --hairline:#C1CCD7; --charcoal:#232321; --gray:#66635C; --sage:#2D3A47; --sage-soft:#E9EDF1; --blush:#B1BFCE; --blush-soft:#EFF2F5; }
+  [data-palette="persimmon"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#E3BFB5; --line-soft:#EDDAD4; --hairline:#E3BFB5; --charcoal:#232321; --gray:#66635C; --sage:#C23A14; --sage-soft:#F7E8E3; --blush:#DFAD9F; --blush-soft:#F9EFEC; }
+  [data-palette="mulberry"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#E0B8CA; --line-soft:#ECD4DF; --hairline:#E0B8CA; --charcoal:#232321; --gray:#66635C; --sage:#6B2F4A; --sage-soft:#F4E6EC; --blush:#D8A6BD; --blush-soft:#F7EDF2; }
+  [data-palette="chartreuse"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#DDE3B5; --line-soft:#EAEDD4; --hairline:#DDE3B5; --charcoal:#232321; --gray:#66635C; --sage:#5F6B0B; --sage-soft:#F5F7E3; --blush:#D7DF9F; --blush-soft:#F7F9EC; }
+  [data-palette="dustyrose"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#E2B6BA; --line-soft:#EDD4D7; --hairline:#E2B6BA; --charcoal:#232321; --gray:#66635C; --sage:#A8434D; --sage-soft:#F5E5E7; --blush:#DBA4A9; --blush-soft:#F8EDEE; }
+  [data-palette="honey"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#E3D7B5; --line-soft:#EDE6D4; --hairline:#E3D7B5; --charcoal:#232321; --gray:#66635C; --sage:#8A6A12; --sage-soft:#F7F2E3; --blush:#DFCE9F; --blush-soft:#F9F5EC; }
+  [data-palette="lavender"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#C4BCDC; --line-soft:#DBD7EA; --hairline:#C4BCDC; --charcoal:#232321; --gray:#66635C; --sage:#5B4A8F; --sage-soft:#EAE7F3; --blush:#B5ABD4; --blush-soft:#F0EEF6; }
+  [data-palette="ocean"]{ --ivory:#FFFEFC; --cream:#F8F7F4; --cream-deep:#EFEDE8; --line:#B7DFE1; --line-soft:#D4ECED; --hairline:#B7DFE1; --charcoal:#232321; --gray:#66635C; --sage:#2F6F72; --sage-soft:#E6F4F5; --blush:#A5D7DA; --blush-soft:#EDF7F8; }
+  [data-palette="default"]{ --ivory:#FFFFFF; --cream:#F7F7F7; --cream-deep:#EEEEEE; --line:#DCDCDC; --line-soft:#E8E8E8; --hairline:#DCDCDC; --charcoal:#111111; --gray:#5F5F5F; --sage:#111111; --sage-soft:#EBEBEB; --blush:#BDBDBD; --blush-soft:#F2F2F2; --appbar:#111111; --appbar-text:#FFFFFF; --accent-ink:#111111; }
+  [data-palette="default"][data-theme="dark"]{ --ivory:#121212; --cream:#1A1A1A; --cream-deep:#232323; --line:#363636; --line-soft:#2C2C2C; --hairline:#363636; --charcoal:#F2F2F2; --gray:#A8A8A8; --sage:#F2F2F2; --sage-soft:#2E2E2E; --blush:#777777; --blush-soft:#262626; --appbar:#000000; --appbar-text:#FFFFFF; --accent-ink:#F2F2F2; }
   @media (max-width:780px){
     .lib-strip{ background:var(--cream); }
     .tabbar{ background:var(--appbar); border-top:none; }
@@ -1393,7 +1396,7 @@
   </div>
 </div>
 <script>
-try { var _p = localStorage.getItem('mysaga_palette'), _f = localStorage.getItem('mysaga_font'); if (_p && _p !== 'classic') document.documentElement.setAttribute('data-palette', _p); if (_f && _f !== 'arial') document.documentElement.setAttribute('data-font', _f); } catch (e) {}
+try { var _p = localStorage.getItem('mysaga_palette') || 'default', _f = localStorage.getItem('mysaga_font'); if (_p && _p !== 'classic') document.documentElement.setAttribute('data-palette', _p); if (_f && _f !== 'arial') document.documentElement.setAttribute('data-font', _f); } catch (e) {}
 try { if (localStorage.getItem('mysaga_intro_seen')) document.getElementById('landing-screen').classList.add('hidden'); } catch (e) {}
 </script>
 <div id="lock-screen">
@@ -2480,6 +2483,7 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => appl
 
 /* ---------------- Color themes + fonts ---------------- */
 const PALETTES = [
+  { id:'default',  name:'Default',         sw:['#FFFFFF','#111111'] },
   { id:'classic',  name:'Classic',         sw:['#FAF8F4','#8FA888'] },
   { id:'vanilla',  name:'Vanilla Cream',   sw:['#FFF7E6','#9C505A'] },
   { id:'blush',    name:'Blush Petal',     sw:['#F7C8D3','#A8506A'] },
@@ -2508,9 +2512,9 @@ const FONTS = [
   { id:'palatino', name:'Palatino', css:"'Palatino Linotype', Palatino, 'Book Antiqua', 'URW Palladio L', serif" },
   { id:'courier', name:'Courier New', css:"'Courier New', Courier, 'Liberation Mono', monospace" }
 ];
-let paletteId = 'classic', fontId = 'arial';
+let paletteId = 'default', fontId = 'arial';
 function applyPalette(id){
-  paletteId = PALETTES.some(p => p.id === id) ? id : 'classic';
+  paletteId = PALETTES.some(p => p.id === id) ? id : 'default';
   if (paletteId === 'classic') document.documentElement.removeAttribute('data-palette'); else document.documentElement.setAttribute('data-palette', paletteId);
   try { localStorage.setItem('mysaga_palette', paletteId); } catch (e) {}
   document.querySelectorAll('.swatch').forEach(b => b.classList.toggle('active', b.dataset.id === paletteId));
@@ -3167,7 +3171,7 @@ async function initApp(){
   _savedFilter = JSON.stringify(libFilter);
   document.getElementById('autoStart').value = autoStart;
   document.getElementById('autoEnd').value = autoEnd;
-  applyPalette((await dbGetSetting('palette')) || 'classic');
+  applyPalette((await dbGetSetting('palette')) || 'default');
   applyFont((await dbGetSetting('font')) || 'arial');
   applyTheme(storedTheme || 'light');
 
